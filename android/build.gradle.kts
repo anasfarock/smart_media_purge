@@ -29,11 +29,6 @@ subprojects {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
         }
     }
-    tasks.configureEach {
-        if (name.contains("AarMetadata", ignoreCase = true)) {
-            enabled = false
-        }
-    }
     if (project.name != "app") {
         afterEvaluate {
             project.extensions.findByName("android")?.let { androidExt ->
